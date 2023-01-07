@@ -1,0 +1,136 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="nav">
+        <div class="toggle">
+            <img src="logo.png" class="img" alt="">
+            <span>TECHNOVATION 2.0</span>
+            <ion-icon name="close-circle-outline" class="exit"></ion-icon>
+        </div>
+        <ul>
+            <li class="list">
+                <a href="/" style="--color:#0f0f5">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text"> HOME</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/aboutus.html" style="--color:#0f0f5">
+                    <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+                    <span class="text"> ABOUT</span>
+                </a>
+            </li>
+            <li class="list  active">
+                <a href="/events.html" style="--color:#0f0f5">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <span class="text"> EVENTS</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/contact.html" style="--color:#0f0f5">
+                    <span class="icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </span>
+                    <span class="text"> CONTACT</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <header class="header__part">
+        <h1 class="animate__animated animate__pulse animate__infinite	infinite">EVENTS</h1>
+    </header>
+
+    <div class="card_1">
+        <div class="card_content">
+            <h2 class="card_title">GIT SET GO</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis, cupiditate voluptates earum voluptatibus!</p>
+            <a href="event.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_2">
+        <div class="card_content">
+            <h2 class="card_title">SEE IT! BUILD IT</h2>
+            <p class="card_body">Our challenges come with designs (for desktop and mobile), resources, and a style guide to get you going.</p>
+            <a href="frontend.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_3">
+        <div class="card_content">
+            <h2 class="card_title">CAPTURE THE FLAG</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis, cupiditate voluptates earum voluptatibus!</p>
+            <a href="ctf.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_4">
+        <div class="card_content">
+            <h2 class="card_title">DEBUGGING RELAY</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis, cupiditate voluptates earum voluptatibus!</p>
+            <a href="debugging.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_5">
+        <div class="card_content">
+            <h2 class="card_title">UI PATH</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis, cupiditate voluptates earum voluptatibus!</p>
+            <a href="index.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_6">
+        <div class="card_content">
+            <h2 class="card_title">SHARK TANK</h2>
+            <p class="card_body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio magnam eligendi beatae inventore aspernatur odio.</p>
+            <a href="index.html" class="button">Learn More</a>
+        </div>
+    </div>
+    <div class="card_7">
+        <div class="card_content">
+            <h2 class="card_title">PRODUCT SALE</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis, cupiditate voluptates earum voluptatibus!</p>
+            <a href="index.html" class="button">Learn Now</a>
+        </div>
+    </div>
+    <div class="card_8">
+        <div class="card_content">
+            <h2 class="card_title">OPTIMUM STRATEGOS</h2>
+            <p class="card_body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio doloremque optio rem animi labore et omnis</p>
+            <a href="index.html" class="button">Register Now</a>
+        </div>
+    </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let tog = document.querySelector('.img')
+        let nav = document.querySelector('.nav')
+        let list = document.querySelectorAll('.list')
+        let exit = document.querySelector('.exit')
+
+        tog.onclick = () => {
+            nav.classList.add('active')
+        }
+        exit.onclick = () => {
+            nav.classList.remove('active')
+        }
+
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'))
+            this.classList.add('active')
+        }
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink))
+    </script>
+
+</body>
+
+</html>

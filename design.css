@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Jost:wght@300;400&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+body,
+html {
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.body {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.body__header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    text-align: center;
+}
+
+.body__header img {
+    height: 100px;
+}
+
+.container {
+    display: flex;
+    top: 0;
+    justify-content: space-between;
+}
+
+.container .box {
+    /* width: 250px; */
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: -80px 20px;
+}
+
+.container .box .title {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.container .box .title .block {
+    width: 0%;
+    height: inherit;
+    background: #ffb510;
+    position: absolute;
+    animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    display: flex;
+}
+
+.container .box .title h1 {
+    font-family: "Poppins";
+    color: #fff;
+    font-size: 32px;
+    -webkit-animation: mainFadeIn 2s forwards;
+    -o-animation: mainFadeIn 2s forwards;
+    animation: mainFadeIn 2s forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+    display: flex;
+    align-items: baseline;
+    position: relative;
+}
+
+.container .box .title h1 span {
+    width: 0px;
+    height: 0px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #ffb510;
+    -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    animation-delay: 2s;
+    margin-left: 5px;
+    margin-top: -10px;
+    position: absolute;
+    bottom: 13px;
+    right: -12px;
+}
+
+.container .box .role {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: -10px;
+}
+
+.container .box .role .block {
+    width: 0%;
+    height: inherit;
+    background: #e91e63;
+    position: absolute;
+    animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    animation-delay: 2s;
+    display: flex;
+}
+
+.container .box .role p {
+    animation: secFadeIn 2s forwards;
+    animation-delay: 3.2s;
+    opacity: 0;
+    font-weight: 400;
+    font-family: "Lato";
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.body__about {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto 40px;
+}
+
+.body__text>p {
+    color: white;
+    font-weight: 400;
+    top: 0;
+}
+
+.body__coordinators {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 40px;
+    color: white;
+    gap: 4rem;
+    font-family: "Jost", sans-serif;
+    justify-content: space-around;
+}
+
+.gallery {
+    --g: 8px;
+    /* the gap */
+    --s: 400px;
+    margin-left: 50px;
+    /* the size */
+    display: grid;
+    border-radius: 50%;
+}
+
+.gallery>img {
+    grid-area: 1/1;
+    width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: translate(var(--_x, 0), var(--_y, 0));
+    cursor: pointer;
+    z-index: 0;
+    transition: 0.3s, z-index 0s 0.3s;
+}
+
+.gallery img:hover {
+    --_i: 1;
+    z-index: 1;
+    transition: transform 0.2s, clip-path 0.3s 0.2s, z-index 0s;
+}
+
+.gallery:hover img {
+    transform: translate(0, 0);
+}
+
+.gallery>img:nth-child(1) {
+    clip-path: polygon( 50% 50%, calc(50% * var(--_i, 0)) calc(120% * var(--_i, 0)), 0 calc(100% * var(--_i, 0)), 0 0, 100% 0, 100% calc(100% * var(--_i, 0)), calc(100% - 50% * var(--_i, 0)) calc(120% * var(--_i, 0)));
+    --_y: calc(-1 * var(--g));
+}
+
+.gallery>img:nth-child(2) {
+    clip-path: polygon( 50% 50%, calc(100% - 120% * var(--_i, 0)) calc(50% * var(--_i, 0)), calc(100% - 100% * var(--_i, 0)) 0, 100% 0, 100% 100%, calc(100% - 100% * var(--_i, 0)) 100%, calc(100% - 120% * var(--_i, 0)) calc(100% - 50% * var(--_i, 0)));
+    --_x: var(--g);
+}
+
+.gallery>img:nth-child(3) {
+    clip-path: polygon( 50% 50%, calc(100% - 50% * var(--_i, 0)) calc(100% - 120% * var(--_i, 0)), 100% calc(100% - 120% * var(--_i, 0)), 100% 100%, 0 100%, 0 calc(100% - 100% * var(--_i, 0)), calc(50% * var(--_i, 0)) calc(100% - 120% * var(--_i, 0)));
+    --_y: var(--g);
+}
+
+.gallery>img:nth-child(4) {
+    clip-path: polygon( 50% 50%, calc(120% * var(--_i, 0)) calc(50% * var(--_i, 0)), calc(100% * var(--_i, 0)) 0, 0 0, 0 100%, calc(100% * var(--_i, 0)) 100%, calc(120% * var(--_i, 0)) calc(100% - 50% * var(--_i, 0)));
+    --_x: calc(-1 * var(--g));
+}
+
+.list h2,
+ol {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.list ol {
+    list-style: circle;
+}
+
+@keyframes mainBlock {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes secBlock {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes mainFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        width: 0px;
+        height: 0px;
+        background: #e9d856;
+        border: 0px solid #ddd;
+        opacity: 0;
+    }
+    50% {
+        width: 10px;
+        height: 10px;
+        background: #e9d856;
+        opacity: 1;
+        bottom: 45px;
+    }
+    65% {
+        width: 7px;
+        height: 7px;
+        bottom: 0px;
+        width: 15px;
+    }
+    80% {
+        width: 10px;
+        height: 10px;
+        bottom: 20px;
+    }
+    100% {
+        width: 7px;
+        height: 7px;
+        background: #e9d856;
+        border: 0px solid #222;
+        bottom: 13px;
+    }
+}
+
+@keyframes secFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .body__about {
+        flex-wrap: wrap;
+        margin: 20px 10px;
+        padding: 4px;
+    }
+    .body__coordinators {
+        margin: 20px 10px;
+        padding: 4px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .gallery {
+        align-items: center;
+    }
+    .gallery>img {
+        grid-area: 1/1;
+        width: 400px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 50%;
+        transform: translate(var(--_x, 0), var(--_y, 0));
+        cursor: pointer;
+        z-index: 0;
+        transition: 0.3s, z-index 0s 0.3s;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .rules {
+        margin: 40px auto;
+        margin-left: -230px;
+    }
+}

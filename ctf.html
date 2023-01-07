@@ -1,0 +1,170 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(#8C1EFF, #f222ff, #ff2975, #ff901f, #ffd319);
+        }
+        
+        h1 {
+            font-family: 'Teko', sans-serif;
+            text-transform: uppercase;
+            font-size: 7rem;
+            text-align: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            margin: 0;
+            min-height: calc(100vh - 16px);
+            background: white;
+            position: relative;
+            background: #171717;
+            color: #000;
+        }
+        
+        h1:before {
+            content: attr(data-text);
+            position: absolute;
+            background: linear-gradient(#8C1EFF, #f222ff, #ff2975, #ff901f, #ffd319);
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 100% 90%;
+            line-height: 0.9;
+            clip-path: ellipse(120px 120px at -2.54% -9.25%);
+            animation: swing 5s infinite;
+            animation-direction: alternate;
+        }
+        
+        .button {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 999;
+            margin-top: -13pc;
+            margin-left: -20px;
+        }
+        
+        button {
+            width: 250px;
+            height: 40px;
+            background: rgb(34, 10, 94);
+            border-radius: 40px;
+            outline: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            position: absolute;
+            z-index: 999;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        button a {
+            text-decoration: none;
+            font-family: "Jost", sans-serif;
+            padding: 10px;
+            word-spacing: 5px;
+            color: white;
+            transition: all .3s ease-in-out;
+            text-align: center;
+        }
+        
+        button:hover {
+            box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+        
+        button a:hover {
+            letter-spacing: 2px;
+        }
+        
+        @keyframes swing {
+            0% {
+                -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
+                clip-path: ellipse(120px 120px at -2.54% -9.25%)
+            }
+            50% {
+                -webkit-clip-path: ellipse(120px 120px at 49.66% 64.36%);
+                clip-path: ellipse(120px 120px at 49.66% 64.36%);
+            }
+            100% {
+                -webkit-clip-path: ellipse(120px 120px at 102.62% -1.61%);
+                clip-path: ellipse(120px 120px at 102.62% -1.61%);
+            }
+        }
+        
+        @media screen and (max-width:550px) {
+            body {
+                overflow: hidden;
+                height: 100vh;
+                background: linear-gradient(#ff2975, #ff901f, #ffd319);
+            }
+            h1 {
+                font-family: 'Teko', sans-serif;
+                text-transform: uppercase;
+                font-size: 4rem;
+                text-align: center;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                margin: 0;
+                min-height: calc(100vh - 16px);
+                background: white;
+                position: relative;
+                background: #171717;
+                color: #000;
+            }
+            h1:before {
+                content: attr(data-text);
+                position: absolute;
+                background: linear-gradient(#ff2975, #ff901f, #ffd319);
+                -webkit-background-clip: text;
+                color: transparent;
+                background-size: 100% 90%;
+                line-height: 0.9;
+                clip-path: ellipse(120px 120px at -2.54% -9.25%);
+                animation: swing 5s infinite;
+                animation-direction: alternate;
+            }
+            @keyframes swing {
+                0% {
+                    -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
+                    clip-path: ellipse(120px 120px at -2.54% -9.25%)
+                }
+                50% {
+                    -webkit-clip-path: ellipse(120px 120px at 49.66% 64.36%);
+                    clip-path: ellipse(120px 120px at 49.66% 64.36%);
+                }
+                100% {
+                    -webkit-clip-path: ellipse(120px 120px at 102.62% -1.61%);
+                    clip-path: ellipse(120px 120px at 102.62% -1.61%);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 data-text="CAPTURE THE FLAG">
+            CAPTURE THE FLAG</h1>
+        <div class="button">
+            <button><a href="index.html">CAPTURE IT NOW</a></button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/544ad584ac.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
