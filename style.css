@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    min-height: 100vh;
+    min-height: 90vh;
     line-height: 1.6;
     padding-left: 9em;
     overflow-x: hidden;
@@ -683,7 +683,7 @@ header {
         padding: 10rem 0 0;
         max-width: 35ch;
         background-repeat: no-repeat;
-        height: 70%;
+        height: 55%;
         border-radius: 20px;
         box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
         margin-bottom: 20px;
@@ -701,6 +701,85 @@ header {
         box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
         backdrop-filter: saturate(180%) blur(10px);
         transform: translateY(50%);
+        transition: transform 500ms ease-in-out;
+    }
+    .card_1:hover .card_content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+    .card_content p {
+        margin-top: 10px;
+        transition: transform 500ms ease-in-out;
+        transition: all 1s ease-in-out;
+    }
+    .card_content>*:not(.card_title) {
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+    }
+    .card_1:hover .card_content>* {
+        opacity: 1;
+    }
+    .card_title {
+        position: relative;
+    }
+    .card_title::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: orangered;
+        padding: 1px;
+        transform: scaleX(0);
+        transition: transform 500ms ease-in-out;
+    }
+    .card_1:hover .card_title::after {
+        transform: scaleX(1);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap;
+        min-height: 100vh;
+        line-height: 1.6;
+        padding-left: 4rem;
+        background-color: #041e3d;
+    }
+    .card_1,
+    .card_2,
+    .card_3,
+    .card_4,
+    .card_5,
+    .card_6,
+    .card_7,
+    .card_8 {
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        padding: 10rem 0 0;
+        max-width: 35ch;
+        background-repeat: no-repeat;
+        height: 70%;
+        border-radius: 20px;
+        box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+        margin: 50px 50px;
+    }
+    .card_1:hover .card_title::after {
+        transform: scale(1.05);
+    }
+    .card_content {
+        font-size: 0.8rem;
+        padding: 1rem;
+        border-radius: 0px 0px 20px 20px;
+        box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+        backdrop-filter: saturate(180%) blur(10px);
+        transform: translateY(70%);
         transition: transform 500ms ease-in-out;
     }
     .card_1:hover .card_content {
@@ -1014,7 +1093,7 @@ header {
     }
     .card_content {
         padding: 1.2rem;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
         border-radius: 0px 0px 20px 20px;
         box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
         backdrop-filter: saturate(180%) blur(10px);
